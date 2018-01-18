@@ -7,8 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row>
+    <ion-col>
+      Name :
+    </ion-col>
+    <ion-col>
+      <input type="text" [(ngModel)]="name" #ctl="ngModel">
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      City :
+    </ion-col>
+    <ion-col>
+      <input type="text" [(ngModel)]="city" #ctl="ngModel">
+    </ion-col>
+  </ion-row>
+
+  <button ion-button full (click)="callGetService(name,city)"> Http Get</button>
+  <button ion-button full (click)="callPostService(name,city)"> Http Post</button>
+  <ion-textarea class="netResponse" rows="5" placeholder="Network Response" [(ngModel)]="netResponse" ></ion-textarea>
 </ion-content>
